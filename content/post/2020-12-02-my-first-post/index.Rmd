@@ -1,0 +1,8 @@
+---
+title: My first post
+author: Nicole Rogers
+date: '2020-12-02'
+slug: my-first-post
+categories: [introduction, R, data science]
+tags: [R, blogdown]
+---
