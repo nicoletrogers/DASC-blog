@@ -6,3 +6,13 @@ slug: my-first-post
 categories: [introduction, R, data science]
 tags: [R, blogdown]
 ---
+
+My first post.
+
+I like lots of penguins.
+
+```{r, message = FALSE}
+library(tidyverse)
+library(palmerpenguins)
+glimpse(penguins)
+```
