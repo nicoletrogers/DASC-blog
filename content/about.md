@@ -1,6 +1,6 @@
 ---
-title: "About"
+title: "About Me"
 date: "2016-05-05T21:48:51-07:00"
 ---
 
-This is a "hello world" example website for the [**blogdown**](https://github.com/rstudio/blogdown) package. The theme was forked from [@jrutheiser/hugo-lithium-theme](https://github.com/jrutheiser/hugo-lithium-theme) and modified by [Yihui Xie](https://github.com/yihui/hugo-lithium).
+Hi! My name is Nicole Rogers. I am a freshman Honors Fellow from Oregon. At the University of Arkansas studying Data Science. On campus I am a member of Pi Beta Phi. Besides staying busy with my sorority and schoolwork, I also enjoy cooking and hiking. My favorite hike I have ever done was in Banff, Canada hiking around Lake Louise. 
