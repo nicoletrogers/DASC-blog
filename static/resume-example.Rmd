@@ -19,9 +19,9 @@ email: ntrogers@uark.edu
 phone: 206-465-0497
 location: "Fayetteville, AR"
 github: ntrogers
-web: wwe.com/superstars/rick-martel
+web: https://ntrogers.netlify.app/
 instagram: "@nicole_.rogers"
-linkedin: "steven-miller-05b6851b3"
+linkedin: "nicole-rogers-64889a1ba"
 mainfont: cochineal
 sansfont: Fira Sans
 # monofont: Fira Code # I want to use this, but seems to choke on @
@@ -43,20 +43,19 @@ photobigness: 1.75cm
 
 # Professional Experience
 
-## World Championship Wrestling
+## Personal Tutor
 
-- Successfully feuded with Booker T, elevating his singles career.
-- Defenestrated on national television by Perry Saturn. It was technically a glass door, but I love the term "defenestration" and I don't get to use it much so I'm rolling with that.
-- Career effectively ended at Superbrawl VIII (:()
+- 2019-2020 School Year 
+- Assited learning of student in math foundations and applications
+- Worked directly with a profesional tutor to ensure that the most helpful and effective teaching styles were being used
 
-## World Wrestling Federation
+## Grade 8 USSF Soccer Referee
 
-- Wrestled Shawn Michaels to a countout draw in front of 80,000 fans in Wembley Stadium at Summerslam 1992.
-- Carried Tito Santana like dead weight to tag team prominence, before [tiring of him at Wrestlemania V](https://www.youtube.com/watch?v=VKnWAxg4R68).
-- Had two amazing entrance themes where somehow the least amazing of the two is [the one done by Robbie Dupree](https://www.youtube.com/watch?v=1bNr3144GDI).
-- Successfully cultivated "The Model" persona, relocating to Cocoa Beach for a gimmick that was years ahead of its time.
-- Launched successful line of cologne, *Arrogance*, and advertised it in [some amazing vignettes](https://www.youtube.com/watch?v=zm9AbH7CnBc).
-- [Temporarily blinded Jake "The Snake" Roberts](https://www.youtube.com/watch?v=cs7sxJboGWA), incapacitating him for the better part of 1990.
+- March 2016-August 2020
+- Effectively managed various players and coaches throughout the game.
+- Worked collaboratively with other referees to take a team approach to managing the game.
+- Mentored by various referees at the Grade 5 level and referee assigners. 
+
 
 ## American Wrestling Association
 
