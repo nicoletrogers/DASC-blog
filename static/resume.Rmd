@@ -19,7 +19,7 @@ email: ntrogers@uark.edu
 phone: 206-465-0497
 location: "Fayetteville, AR"
 github: ntrogers
-web: https://ntrogers.netlify.app/
+web: ntrogers.netlify.app/
 instagram: "@nicole_.rogers"
 linkedin: "nicole-rogers-64889a1ba"
 mainfont: cochineal

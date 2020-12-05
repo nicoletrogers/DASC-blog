@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.2)  4 DEC 2020 13:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.2)  5 DEC 2020 09:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -717,8 +717,7 @@ Package hyperref Warning: Option `bookmarks' has already been used,
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count328
 \l__pdf_internal_box=\box62
-)
-No file resume.aux.
+) (./resume.aux)
 \openout1 = `resume.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 139.
@@ -762,6 +761,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 139.
 LaTeX Info: Redefining \pageref on input line 139.
 LaTeX Info: Redefining \nameref on input line 139.
+(./resume.out) (./resume.out)
 \@outlinefile=\write4
 \openout4 = `resume.out'.
 
@@ -805,7 +805,7 @@ File: fc-english.def 2016/01/12
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 139.
-<NicoleRogers.jpeg, id=7, 1631.09375pt x 2038.61626pt>
+<NicoleRogers.jpeg, id=51, 1631.09375pt x 2038.61626pt>
 File: NicoleRogers.jpeg Graphic file (type jpg)
 <use NicoleRogers.jpeg>
 Package pdftex.def Info: NicoleRogers.jpeg  used on input line 144.
@@ -856,18 +856,53 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 154
 (/home/ntrogers/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-! TeX capacity exceeded, sorry [input stack size=5000].
-\@makeother #1->\catcode `#1
-                            12\relax 
-l.160 ...tp://\url{https://ntrogers.netlify.app/}}
-                                                  {\tt \url{https://ntrogers...
- 
+LaTeX Font Info:    Trying to load font information for U+fontawesomethree on i
+nput line 161.
+(/home/ntrogers/.TinyTeX/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
+File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
+)
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
+69.
+(/home/ntrogers/.TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+75.
+(/home/ntrogers/.TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) 
+AED: lastpage setting LastPage
+[1
+
+{/home/ntrogers/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Nicol
+eRogers.jpeg>] (./resume.aux)
+Package rerunfilecheck Info: File `resume.out' has not changed.
+(rerunfilecheck)             Checksum: DB1D17D05C638D8E541064A5A3410E3F;1441.
+ ) 
 Here is how much of TeX's memory you used:
- 24059 strings out of 481433
- 419987 string characters out of 5920117
- 1289091 words of memory out of 5000000
- 40363 multiletter control sequences out of 15000+600000
- 560270 words of font info for 52 fonts, out of 8000000 for 9000
+ 24212 strings out of 481433
+ 422844 string characters out of 5920117
+ 726606 words of memory out of 5000000
+ 40466 multiletter control sequences out of 15000+600000
+ 591194 words of font info for 64 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 5000i,6n,9991p,1018b,655s stack positions out of 5000i,500n,10000p,200000b,80000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 80i,11n,85p,1018b,654s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/home/ntrogers/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/ntrog
+ers/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/home/ntrogers/.TinyTeX/
+texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc}{/home/ntrogers/.Ti
+nyTeX/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}</home/ntrogers
+/.TinyTeX/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></home/ntro
+gers/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></home/ntrogers/.Tiny
+TeX/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></home/ntrogers/.TinyTeX/texmf
+-dist/fonts/type1/public/lm/lmr10.pfb></home/ntrogers/.TinyTeX/texmf-dist/fonts
+/type1/public/lm/lmr8.pfb></home/ntrogers/.TinyTeX/texmf-dist/fonts/type1/publi
+c/lm/lmr9.pfb></home/ntrogers/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.p
+fb></home/ntrogers/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></hom
+e/ntrogers/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
+Output written on resume.pdf (1 page, 1055885 bytes).
+PDF statistics:
+ 130 PDF objects out of 1000 (max. 8388607)
+ 115 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
+
