@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.2)  5 DEC 2020 09:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.2)  5 DEC 2020 09:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -880,10 +880,10 @@ Package rerunfilecheck Info: File `resume.out' has not changed.
 (rerunfilecheck)             Checksum: DB1D17D05C638D8E541064A5A3410E3F;1441.
  ) 
 Here is how much of TeX's memory you used:
- 24212 strings out of 481433
- 422844 string characters out of 5920117
+ 24214 strings out of 481433
+ 422896 string characters out of 5920117
  726606 words of memory out of 5000000
- 40466 multiletter control sequences out of 15000+600000
+ 40468 multiletter control sequences out of 15000+600000
  591194 words of font info for 64 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  80i,11n,85p,1018b,654s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -899,7 +899,7 @@ TeX/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></home/ntrogers/.TinyTeX/texmf
 c/lm/lmr9.pfb></home/ntrogers/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.p
 fb></home/ntrogers/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></hom
 e/ntrogers/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on resume.pdf (1 page, 1055885 bytes).
+Output written on resume.pdf (1 page, 1055891 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  115 compressed objects within 2 object streams

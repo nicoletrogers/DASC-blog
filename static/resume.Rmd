@@ -31,7 +31,7 @@ fontsize: 11pt
 includephoto: TRUE
 myphoto: NicoleRogers.jpeg
 # shift: "7in,-.25in" # this is default
-photobigness: 1.75cm
+photobigness: 2.00cm
 # photozoom: ".2\textwidth" # this is default
 ---
 
