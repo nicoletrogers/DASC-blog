@@ -1,0 +1,129 @@
+---
+output: 
+  pdf_document:
+    latex_engine: pdflatex
+    keep_tex: false
+    dev: cairo_pdf
+    template: svm-latex-resume.tex
+
+title: "Résumé"
+author: "Nicole Rogers"
+date: "12/4/2020"
+
+fontawesome: TRUE
+# geometry: margin=1in # this put the body on pg 2
+geometry: "top=.5in, left =.5in, right=.5in, bottom=.75in"
+
+# How can we get a hold of you?
+email: ntrogers@uark.edu
+phone: 206-465-0497
+location: "Fayetteville, AR"
+github: ntrogers
+web: ntrogers.netlify.app/
+instagram: "@nicole_.rogers"
+linkedin: "nicole-rogers-64889a1ba"
+mainfont: cochineal
+sansfont: Fira Sans
+# monofont: Fira Code # I want to use this, but seems to choke on @
+urlcolor: blue
+fontsize: 11pt
+
+includephoto: TRUE
+myphoto: NicoleRogers.jpeg
+# shift: "7in,-.25in" # this is default
+photobigness: 2.00cm
+# photozoom: ".2\textwidth" # this is default
+---
+
+
+<!-- Read more about Pandoc's [fenced_divs](https://pandoc.org/MANUAL.html#extension-fenced_divs) syntax -->
+
+:::::: {.columns}
+::: {.column width="60%" data-latex="{0.60\textwidth}"}
+
+# Professional Experience
+
+## Personal Tutor
+
+- 2019-2020 School Year 
+- Assited learning of student in math foundations and applications
+- Worked directly with a profesional tutor to ensure that the most helpful and effective teaching styles were being used
+
+## Grade 8 USSF Soccer Referee
+
+- March 2016-August 2020
+- Effectively managed various players and coaches throughout the game.
+- Worked collaboratively with other referees to take a team approach to managing the game.
+- Mentored by various referees at the Grade 5 level and referee assigners. 
+
+## Volunteering
+
+- Northwest Children's Outreach: specialized in maintaining warehouse and creating personalized bags of clothing, books, and other necessities for children
+- Thirst Project: created and implemented a fundraisng plan to raise money to help build wells in developing communities in hopes to end the water crisis. [Learn more about the Thirst Project](https://www.thirstproject.org/about/our-mission/)
+
+## Other Activities 
+
+- Model United Nations: researched and presented as a select country. Incited team work and collaboration to help pass resolutions.
+- DECA: Practiced career skills with a focus in brand marketing, hospitality, and entrepreneurship. Qualified for International Career Development Conference.
+
+
+
+:::
+::: {.column width="2%" data-latex="{0.02\textwidth}"}
+\ 
+<!-- an empty div with an empty character to serve as a column sep -->
+:::
+:::::: {.column width="38%" data-latex="{0.38\textwidth}"}
+
+# Education
+
+## Undergraduate Program
+
+Attending the University of Arkansas as an Honors Fellow with a major in Data Science
+ 
+## High School
+
+Distinguished Scholar Graduate from Lakeridge High School.
+4.0 unweighted GPA
+
+# Awards and Positions
+
+## Awards
+
+- Merit Award for Academic Excellence (2020)
+- Seal of Biliteracy for Spanish (2020)
+- National AP Scholar (2020, 2019)
+- Merit Awards : Math and Social Studies (2020)
+- Gold Key in Scholastic Writing Competition: Poetry (2018)
+
+## Positions
+
+- President of Lakeridge's Key Club Chapter: an international volunteering organization for high school students. Increased participation and member levels, became the largest chapter in our division.
+- Vice President of National Spanish Honors Society: managed and engaged with members to promote excellency in learning the language and increased understanding and interaction with Spanish studies
+
+:::
+::::::
+
+<!-- If you want another page, this is how you can do it... -->
+
+<!-- \newpage
+
+:::::: {.columns}
+::: {.column width="60%" data-latex="{0.60\textwidth}"}
+
+
+
+
+:::
+::: {.column width="2%" data-latex="{0.02\textwidth}"}
+\
+
+
+:::
+:::::: {.column width="38%" data-latex="{0.38\textwidth}"}
+
+
+:::
+::::::
+
+-->
