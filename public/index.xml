@@ -33,7 +33,7 @@ library(tidyverse) library(palmerpenguins) glimpse(penguins) ## Observations: 34
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
-      <description>Hi! My name is Nicole Rogers. I am a freshman Honors Fellow from Oregon. At the University of Arkansas studying Data Science. I initally fell in love with data science because of its interdisciplinary nature. However I have continued in it because it is exciting, applicable, and chaning the future. Outside from school I love to stay active and involved. I am a member of Pi Beta Phi and love trying out new hikes and coffee shops.</description>
+      <description>Hi! My name is Nicole Rogers. I am a freshman Honors Fellow from Oregon. Now I am at the University of Arkansas studying Data Science. I initally fell in love with data science because of its interdisciplinary nature. However I have continued in it because it is exciting, applicable, and chaning the future. Outside from school I love to stay active and involved. I am a member of Pi Beta Phi and love trying out new hikes and coffee shops.</description>
     </item>
     
   </channel>

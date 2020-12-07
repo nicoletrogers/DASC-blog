@@ -6,6 +6,16 @@ slug: college-tuition-data-exploration
 categories: [R, data science, data analysis]
 tags: [R, blogdown]
 ---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r, include = FALSE, message = FALSE}
+##load data
+library(here)
+library(readr)
+salary_potential <- read_csv("content/post/2020-12-06-college-tuition-data-exploration/2020-03-10/salary_potential.csv")
+tuition_cost <- read_csv("content/post/2020-12-06-college-tuition-data-exploration/2020-03-10/tuition_cost.csv")
+```
 
 ### Collegge Tuition Data Exploration
 
