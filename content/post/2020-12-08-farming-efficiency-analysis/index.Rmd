@@ -1,0 +1,8 @@
+---
+title: Farming Efficiency Analysis
+author: ~
+date: '2020-12-08'
+slug: farming-efficiency-analysis
+categories: []
+tags: []
+---
