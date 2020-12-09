@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r, include = FALSE, message = FALSE}
-##load data
+##load data I will be using
 library(here)
 library(readr)
 salary_potential <- read_csv("./2020-03-10/salary_potential.csv")
