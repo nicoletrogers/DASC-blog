@@ -8,21 +8,21 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 09 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>College Tuition Data Exploration</title>
+      <link>/2020/12/09/college-tuition-data-exploration/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/12/09/college-tuition-data-exploration/</guid>
+      <description>  </description>
+    </item>
+    
+    <item>
       <title>Farming Efficiency Data and Relations</title>
       <link>/2020/12/09/farming-efficiency-data-and-relations/</link>
       <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/12/09/farming-efficiency-data-and-relations/</guid>
       <description>##load data and libaries library(tidyverse) library(tidytuesdayR) library(here) library(ggplot2) library(patchwork) library(gapminder) library(readr) arable_land &amp;lt;- read_csv(&amp;quot;./2020-09-01/arable_land_pin.csv&amp;quot;) tractors &amp;lt;- read_csv(&amp;quot;./2020-09-01/cereal_yields_vs_tractor_inputs_in_agriculture.csv&amp;quot;) Examination of Crop Efficiency  Introduction For this analysis exploring data regarding farming efficiency in countries worldwide. This data comes directly from Tidy Tuesday however it originally came from Our World in Data. This data set gives lots of data about global crop yields and other information relating to farming. Although for my analysis I specifically focused on the arable_land data set as I wanted to explore topics related to farming efficieny.</description>
-    </item>
-    
-    <item>
-      <title>Farming Efficiency Analysis</title>
-      <link>/2020/12/08/farming-efficiency-analysis/</link>
-      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/12/08/farming-efficiency-analysis/</guid>
-      <description>Examination of Crop Efficiency  Introduction For this analysis exploring data regarding farming efficiency in countries worldwide. This data comes directly from Tidy Tuesday however it originally came from Our World in Data. This data set gives lots of data about global crop yields and other information relating to farming. Although for my analysis I specifically focused on the arable_land data set as I wanted to explore topics related to farming efficieny.</description>
     </item>
     
     <item>
@@ -35,34 +35,12 @@
     </item>
     
     <item>
-      <title>My first post</title>
-      <link>/2020/12/02/my-first-post/</link>
-      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/12/02/my-first-post/</guid>
-      <description>  My first post.
-I like lots of penguins.
-library(tidyverse) library(palmerpenguins) glimpse(penguins) ## Observations: 344 ## Variables: 8 ## $ species &amp;lt;fct&amp;gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ade… ## $ island &amp;lt;fct&amp;gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgers… ## $ bill_length_mm &amp;lt;dbl&amp;gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1,… ## $ bill_depth_mm &amp;lt;dbl&amp;gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1,… ## $ flipper_length_mm &amp;lt;int&amp;gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 18… ## $ body_mass_g &amp;lt;int&amp;gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475,… ## $ sex &amp;lt;fct&amp;gt; male, female, female, NA, female, male, female, mal… ## $ year &amp;lt;int&amp;gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 200… </description>
-    </item>
-    
-    <item>
       <title>About Me</title>
       <link>/about/</link>
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
       <description>Hi! My name is Nicole Rogers. I am a freshman Honors Fellow from Oregon. Now I am at the University of Arkansas studying Data Science. I initally fell in love with data science because of its interdisciplinary nature. However I have continued in it because it is exciting, applicable, and chaning the future. Outside from school I love to stay active and involved. I am a member of Pi Beta Phi and love trying out new hikes and coffee shops.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/2015/07/23/hello-r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/2015/07/23/hello-r-markdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.</description>
     </item>
     
   </channel>
