@@ -17,7 +17,7 @@ salary_potential <- read_csv("content/post/2020-12-06-college-tuition-data-explo
 tuition_cost <- read_csv("content/post/2020-12-06-college-tuition-data-exploration/2020-03-10/tuition_cost.csv")
 ```
 
-### Collegge Tuition Data Exploration
+### College Tuition Data Exploration
 
 ## Introduction
 
