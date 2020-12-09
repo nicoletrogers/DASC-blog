@@ -96,12 +96,12 @@ tractors %>%
   filter(Year == "2014") %>%
   filter(Code == "VGB" | Code == "NZL" | Code == "DJI" | Code == "KWT" | Code == "GTM" | Code == "CHL" | Code == "CRI" | Code == "IRN" | Code == "MNG" | Code == "CHN" | Code == "PYF" | Code == "MDV" | Code == "CUB" | Code == "MTQ" | Code == "LCA" | Code == "BRB" | Code == "GMB" | Code == "COK" | Code == "KNA" | Code == "STP") %>% 
   full_join(combined, by = "Entity") %>%
-  filter(`Total population (Gapminder)` < 1000000)
+  filter(`Total population (Gapminder)` < 1000000) 
 
 ```
 10 of the countries from the 2 extremes (10 most and least efficient countries worldwide) have populations under 1 million people. However only 2 of these countries are on the top 10 list.
 
-The other data that I used in this project is from gapminder. I used this data to help support my furhter analyses of the impact of farming efficiency. This data was from the [Gapminder Project](https://www.gapminder.org/tools/?from=world#$chart-type=bubbles). This data set has 1,704 observations and 6 variables. Country and continent give the name of the country and continent respectively. The year variable gives the year for the data. The lifExp variable gives the average life expectancy in years. The pop variable gives the population size and gdpPercap gives the GDP per capita (total Gross Domestic Product divided by the population).
+The other data that I used in this project is from gapminder. I used this data to help support my further analyses of the impact of farming efficiency. This data was from the [Gapminder Project](https://www.gapminder.org/tools/?from=world#$chart-type=bubbles). This data set has 1,704 observations and 6 variables. Country and continent give the name of the country and continent respectively. The year variable gives the year for the data. The lifExp variable gives the average life expectancy in years. The pop variable gives the population size and gdpPercap gives the GDP per capita (total Gross Domestic Product divided by the population).
 
 ## Data Analyses
 
@@ -166,11 +166,9 @@ z1 + z2 +
 ```
 One interesting thing to note is that the spike, while dramatic, is very contained. As shown in the visualization the arable land needed goes back to what it was after the spike quite quickly as shown on the left graph. The graph on the right zooms in to give a better picture of how the efficiency was actually changing, although this graph does exclude the outliers, it shows that Qatar's farming efficiency actually fluctuates quite a bt. However the changes from year to year have decreased, shown by the fact that the graph is flattening out. 
 
-Qatar is not apart of the gapminder data set, however external research has shown that the spike follows the year after a coup took place to overtthrow the royal family. Additionally using the gapminder website it shows no significant changes for life expectancy or income during the time period of the spike, concluding that the result was most likely due to a power change and lack of organization.
+Qatar is not apart of the gapminder data set, however external research has shown that the spike follows the year after a coup took place to overthrow the royal family only a few years after Qatar gained their independence from Great Britain. Additionally using the gapminder website it shows no significant changes for life expectancy or income during the time period of the spike, concluding that the result was most likely due to a power change and lack of organization.
 
-```{r, message = FALSE}
 
-```
 # Question 3
 
 Does efficiency relate to life expectancy. To analyze this I am going to use a scatter plot to compare the life expectancy variable form gap minder to the `arable land needed to produced a fixed crop` variable. I will then use a variety of modeling techniques to explore the results.
@@ -213,7 +211,8 @@ combination_without_outliers1 <- combo[-1, ]
 combination_without_outliers2 <- combination_without_outliers1[-1, ]
 combination_without_outliers3 <- combination_without_outliers2[-1, ]
 combination_without_outliers4 <- combination_without_outliers3[-1, ]
-combination_without_outliers4ggplot(combination_without_outliers4, aes(x = `Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))`, y = gdpPercap, color = continent)) +
+
+ggplot(combination_without_outliers4, aes(x = `Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))`, y = gdpPercap, color = continent)) +
   geom_point() +
   geom_smooth(method = "lm") +
   labs(y = "GDP per Capita", title = "GDP per Capita by Arable Land Needed (without Outliers)")
