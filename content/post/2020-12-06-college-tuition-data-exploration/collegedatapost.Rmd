@@ -21,7 +21,7 @@ tuition_cost <- read_csv("content/post/2020-12-06-college-tuition-data-explorati
 
 ## Introduction
 
-This data is Tidytuesday Data from github. However, this specific data came originally came from the U.S. Department of Education. The tuition data came from (TuitionTracker.org)[https://www.tuitiontracker.org/] and the salary data comes from (Payscale.com)[https://www.payscale.com/college-salary-report/best-schools-by-state/bachelors/new-hampshire]. Overall this data breaks down colleges and their costs while also looking at the type of institution, degree length, and salary potential. For this data I want to explore what impacts the cost of a college and the if college truly counts as an investment. To test these hypotheses I have formulate a few spefic questions to test:
+This data is Tidytuesday Data from github. However, this specific data came originally came from the U.S. Department of Education. The tuition data came from [TuitionTracker.org](https://www.tuitiontracker.org/) and the salary data comes from [Payscale.com](https://www.payscale.com/college-salary-report/best-schools-by-state/bachelors/new-hampshire). Overall this data breaks down colleges and their costs while also looking at the type of institution, degree length, and salary potential. For this data I want to explore what impacts the cost of a college and the if college truly counts as an investment. To test these hypotheses I have formulate a few spefic questions to test:
 
 1. Is expensive tuition worth the investment? 
 
