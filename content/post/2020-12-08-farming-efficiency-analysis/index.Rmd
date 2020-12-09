@@ -204,9 +204,16 @@ ggplot(combination, aes(x = `Arable land needed to produce a fixed quantity of c
   geom_smooth(method = "lm") +
   labs(y = "GDP per Capita", title = "GDP per Capita by Arable Land Needed to Produce a Fixed Amount of Crop (2007)")
 ```
-The two graphs presented are almost identical except for the fact that the last graph includes trend lines and is colored based on continent. The first graph is included to get an overall sense of how the two variables are related. In it, it is possible to tell that there is a slight direct relation between higher amounts of arable land needed and GDP per capita. On the second graph these trends are more pronounced and grouped by continent. Here it is clear to see that that for some continents (Asia, Europe, and Oceania) there is a strong direct relationship between these variables. On the contrary the Americas and Africa have slightly negative trendlines. However the both continents have two large outliers for the amount of arable land needed to produce a fixed amount of crop. If we removed these two data points the resulting graph would show all continents have a direct trend between the amount of arable land needed to produce a fixed amount of crop and GDP per capita. 
+The two graphs presented are almost identical except for the fact that the last graph includes trend lines and is colored based on continent. The first graph is included to get an overall sense of how the two variables are related. In it, it is possible to tell that there is a slight direct relation between higher amounts of arable land needed and GDP per capita. On the second graph these trends are more pronounced and grouped by continent. Here it is clear to see that that for some continents (Asia, Europe, and Oceania) there is a strong direct relationship between these variables. On the contrary the Americas and Africa have slightly negative trend lines. However the both continents have two large outliers for the amount of arable land needed to produce a fixed amount of crop. If we removed these two data points the resulting graph would show all continents have a direct trend between the amount of arable land needed to produce a fixed amount of crop and GDP per capita. 
 ```{r, message = FALSE}
-ggplot(combination_without_outliers4, aes(x = `Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))`, y = gdpPercap, color = continent)) +
+combo <-  combination %>%
+  arrange(desc(`Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))`))
+
+combination_without_outliers1 <- combo[-1, ]
+combination_without_outliers2 <- combination_without_outliers1[-1, ]
+combination_without_outliers3 <- combination_without_outliers2[-1, ]
+combination_without_outliers4 <- combination_without_outliers3[-1, ]
+combination_without_outliers4ggplot(combination_without_outliers4, aes(x = `Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))`, y = gdpPercap, color = continent)) +
   geom_point() +
   geom_smooth(method = "lm") +
   labs(y = "GDP per Capita", title = "GDP per Capita by Arable Land Needed (without Outliers)")
