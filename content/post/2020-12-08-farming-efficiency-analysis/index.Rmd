@@ -21,7 +21,8 @@ library(patchwork)
 library(gapminder)
 library(readr)
 
-arable_land <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-01/arable_land_pin.csv')
+arable_land <- read_csv("./2020-09-01/arable_land_pin.csv")
+tractors <- read_csv("./2020-09-01/cereal_yields_vs_tractor_inputs_in_agriculture.csv")
 
 ```
 
