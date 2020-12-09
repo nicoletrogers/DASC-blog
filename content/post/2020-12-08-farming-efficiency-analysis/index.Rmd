@@ -21,7 +21,7 @@ library(patchwork)
 library(gapminder)
 library(readr)
 
-arable_land<- read_csv("./2020-09-01/arable_land_pin.csv")
+arable_land <- read_csv("./2020-09-01/arable_land_pin.csv")
 
 ```
 
