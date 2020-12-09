@@ -8,15 +8,6 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 09 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>College Tuition Data Exploration</title>
-      <link>/2020/12/09/college-tuition-data-exploration/</link>
-      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/12/09/college-tuition-data-exploration/</guid>
-      <description>  </description>
-    </item>
-    
-    <item>
       <title>Farming Efficiency Data and Relations</title>
       <link>/2020/12/09/farming-efficiency-data-and-relations/</link>
       <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
@@ -31,7 +22,7 @@
       <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/12/06/college-tuition-data-exploration/</guid>
-      <description>College Tuition Data Exploration  Introduction This data is Tidytuesday Data from github. However, this specific data came originally came from the U.S. Department of Education. The tuition data came from (TuitionTracker.org)[https://www.tuitiontracker.org/] and the salary data comes from (Payscale.com)[https://www.payscale.com/college-salary-report/best-schools-by-state/bachelors/new-hampshire]. Overall this data breaks down colleges and their costs while also looking at the type of institution, degree length, and salary potential. For this data I want to explore what impacts the cost of a college and the if college truly counts as an investment.</description>
+      <description>College Tuition Data Exploration  Introduction This data is Tidytuesday Data from github. However, this specific data came originally came from the U.S. Department of Education. The tuition data came from TuitionTracker.org and the salary data comes from Payscale.com. Overall this data breaks down colleges and their costs while also looking at the type of institution, degree length, and salary potential. For this data I want to explore what impacts the cost of a college and the if college truly counts as an investment.</description>
     </item>
     
   </channel>
