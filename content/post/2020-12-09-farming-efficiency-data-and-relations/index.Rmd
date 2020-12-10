@@ -126,6 +126,13 @@ q1 <- arable_land %>%
 q1 +
   plot_annotation(title = "Arable Land Needed for Fixed Crop Quantity for New Zealand") +
   plot_annotation(subtitle = "1961 = 1.0")
+
+arable_land %>%
+  filter(Entity == "New Zealand") %>%
+  mutate(ratio = `Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))` / lag(`Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))`)) %>%
+  ggplot(aes(x = Year, y = ratio)) +
+  geom_point() +
+  geom_hline()
 ```
 This visualization shows that for the most part, New Zealand is a country that has been constantly improving its farming efficiency. While There were some increases, the overall trend off the graph is undisputedly decreasing.
 
