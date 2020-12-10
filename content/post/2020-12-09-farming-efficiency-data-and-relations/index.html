@@ -11,7 +11,9 @@ tags: []
 <script src="index_files/anchor-sections/anchor-sections.js"></script>
 
 
-<pre class="r"><code>##load data and libaries
+<div id="examination-of-crop-efficiency" class="section level3">
+<h3>Examination of Crop Efficiency</h3>
+<pre class="r"><code>##load data and libraries
 library(tidyverse)
 library(tidytuesdayR)
 library(here)
@@ -22,12 +24,10 @@ library(readr)
 
 arable_land &lt;- read_csv(&quot;./2020-09-01/arable_land_pin.csv&quot;)
 tractors &lt;- read_csv(&quot;./2020-09-01/cereal_yields_vs_tractor_inputs_in_agriculture.csv&quot;)</code></pre>
-<div id="examination-of-crop-efficiency" class="section level3">
-<h3>Examination of Crop Efficiency</h3>
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>For this analysis exploring data regarding farming efficiency in countries worldwide. This data comes directly from Tidy Tuesday however it originally came from <a href="https://ourworldindata.org/crop-yields">Our World in Data</a>. This data set gives lots of data about global crop yields and other information relating to farming. Although for my analysis I specifically focused on the arable_land data set as I wanted to explore topics related to farming efficieny. Overall to explore this subject I created 3 hypotheses to explore and test:</p>
+<p>For this analysis exploring data regarding farming efficiency in countries worldwide. This data comes directly from Tidy Tuesday however it originally came from <a href="https://ourworldindata.org/crop-yields">Our World in Data</a>. This data set gives lots of data about global crop yields and other information relating to farming. Although for my analysis I specifically focused on the arable_land data set as I wanted to explore topics related to farming efficiency. Overall to explore this subject I created 3 hypotheses to explore and test:</p>
 <ol style="list-style-type: decimal">
 <li><p>New Zealand was the second most efficient country in 2014 (relative to itself), but was it always that efficient?</p></li>
 <li><p>What happened with farming efficiency in Qatar?</p></li>
@@ -36,7 +36,7 @@ tractors &lt;- read_csv(&quot;./2020-09-01/cereal_yields_vs_tractor_inputs_in_ag
 </div>
 <div id="exploratory-data-analysis" class="section level2">
 <h2>Exploratory Data Analysis</h2>
-<p>For this data analysis project I looked at all of the data sets within Global Crop Yields however I found that the arable_land data set gave the best data for the area that I wanted to explore. For this data set there are 11,280 observations and 4 variables. The entity variable gives the name of the country. The code variable gives a three letter code for each country name. The year variable gives the year for which the data was collected. Finally the ‘Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))’ states how much arable land (land that is well suited for growing crops) is needed to get the same amount of food. Something unique about this variable is that is scaled individually to each country. This means that the value under this column gives the amount of arable land needed to produce a certain amount of crop relative to that same country. This is important because otherwise the results would be too inconsistent as factors such as country size, temperature, and type of crop could severly impact the value. One interesting characteristic about this data set is that it is extremely unique to each country. Intuitively this makes sense as every country has different factors that changes their farming efficiency but it does also mean that it is determining worldwide trends can be difficult.</p>
+<p>For this data analysis project I looked at all of the data sets within Global Crop Yields however I found that the arable_land data set gave the best data for the area that I wanted to explore. For this data set there are 11,280 observations and 4 variables. The entity variable gives the name of the country. The code variable gives a three letter code for each country name. The year variable gives the year for which the data was collected. Finally the ‘Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))’ states how much arable land (land that is well suited for growing crops) is needed to get the same amount of food. Something unique about this variable is that is scaled individually to each country. This means that the value under this column gives the amount of arable land needed to produce a certain amount of crop relative to that same country. This is important because otherwise the results would be too inconsistent as factors such as country size, temperature, and type of crop could severely impact the value. One interesting characteristic about this data set is that it is extremely unique to each country. Intuitively this makes sense as every country has different factors that changes their farming efficiency but it does also mean that it is determining worldwide trends can be difficult.</p>
 <pre class="r"><code>arable_land %&gt;%
   filter(!is.na(Code)) %&gt;%
   ggplot(aes(x = `Year`, y = `Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))`, group = Entity)) +
@@ -130,7 +130,13 @@ tractors %&gt;%
 ## # … with 3 more variables: Code.y &lt;chr&gt;, Year.y &lt;dbl&gt;, `Arable land needed to
 ## #   produce a fixed quantity of crops ((1.0 = 1961))` &lt;dbl&gt;</code></pre>
 <p>10 of the countries from the 2 extremes (10 most and least efficient countries worldwide) have populations under 1 million people. However only 2 of these countries are on the top 10 list.</p>
-<p>The other data that I used in this project is from gapminder. I used this data to help support my further analyses of the impact of farming efficiency. This data was from the <a href="https://www.gapminder.org/tools/?from=world#$chart-type=bubbles">Gapminder Project</a>. This data set has 1,704 observations and 6 variables. Country and continent give the name of the country and continent respectively. The year variable gives the year for the data. The lifExp variable gives the average life expectancy in years. The pop variable gives the population size and gdpPercap gives the GDP per capita (total Gross Domestic Product divided by the population).</p>
+<p>The other data that I used in this project is from gapminder. I used this data to help support my further analyses of the impact of farming efficiency. This data was from the <a href="https://www.gapminder.org/tools/?from=world#$chart-type=bubbles">Gapminder Project</a>. This data set has 1,704 observations and 6 variables. Country and continent give the name of the country and continent respectively. The year variable gives the year for the data. The lifExp variable gives the average life expectancy in years. The pop variable gives the population size and gdpPercap gives the GDP per capita (total Gross Domestic Product divided by the population). Life expectancy and GDP per capita are two measures to see how well the citizens of a country are doing. For both variables, the higher the better and therefore the two variables generally are directly related, as shown in the graph below.</p>
+<pre class="r"><code>gapminder %&gt;%
+  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_point(alpha = 0.4) +
+  labs(x = &quot;GDP per Capita&quot;, y = &quot;Life Expectancy&quot;) +
+  ggtitle(&quot;Life Expectancy versus GDP per Capita by Contient&quot;)</code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 </div>
 <div id="data-analyses" class="section level2">
 <h2>Data Analyses</h2>
@@ -166,8 +172,17 @@ tractors %&gt;%
 q1 +
   plot_annotation(title = &quot;Arable Land Needed for Fixed Crop Quantity for New Zealand&quot;) +
   plot_annotation(subtitle = &quot;1961 = 1.0&quot;)</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
-This visualization shows that for the most part, New Zealand is a country that has been constantly improving its farming efficiency. While There were some increases, the overall trend off the graph is undisputedly decreasing.</p>
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code>arable_land %&gt;%
+  filter(Entity == &quot;New Zealand&quot;) %&gt;%
+  mutate(ratio = `Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))` / lag(`Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))`)) %&gt;%
+  ggplot(aes(x = Year, y = ratio)) +
+  geom_point() +
+  geom_hline(yintercept = 1, color = &quot;purple&quot;) +
+  labs(x = &quot;Year&quot;, y = &quot;Ratio of Arable Land Needed&quot;, title = &quot;Ratio of Arable Land Needed in New Zealand Compared to the Previous Year&quot;)</code></pre>
+<pre><code>## Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-6-2.png" width="672" /></p>
+<p>The fist visualization shows that for the most part, New Zealand is a country that has been constantly improving its farming efficiency. While There were some increases, the overall trend off the graph is undisputedly decreasing. The second graph takes a look at the ratio from year to year of the amount of arable land needed to produce the same amount of crop. Most of the data is centered around the line y = 1 (graphed in purple). When data points are below this line then that means the year was more efficient than the previous year, when points are above the line then the year was less efficient. However there is one clear outlier in the plot is the at the bottom of the graph for the year 2002. In this year only 0.3 of the arable land used the previous the year was needed to produce the same amount of crop.</p>
 </div>
 <div id="question-2" class="section level1">
 <h1>Question 2</h1>
@@ -190,7 +205,7 @@ This visualization shows that for the most part, New Zealand is a country that h
 ##  9 Sao Tome and P… STP    2007                                              6.71
 ## 10 Sao Tome and P… STP    2004                                              6.66
 ## # … with 11,270 more rows</code></pre>
-<p>By far the largest amounts of arable land needed to produce a fixed quantity of crop belongs to Qatar, specifcially in the early to mid 1970’s.</p>
+<p>By far the largest amounts of arable land needed to produce a fixed quantity of crop belongs to Qatar, specifically in the early to mid 1970’s.</p>
 <pre class="r"><code>arable_land %&gt;%
   filter(Entity == &quot;Qatar&quot;) </code></pre>
 <pre><code>## # A tibble: 54 x 4
@@ -223,10 +238,32 @@ z2 &lt;- arable_land %&gt;%
   ylim(0, 3)
 
 z1 + z2 +
-  plot_annotation(title = &quot;Arable Land Needed for Fixed Crop Quantity for New Qatar&quot;) +
+  plot_annotation(title = &quot;Arable Land Needed for Fixed Crop Quantity for Qatar&quot;) +
   plot_annotation(subtitle = &quot;1961 = 1.0&quot;)</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
-One interesting thing to note is that the spike, while dramatic, is very contained. As shown in the visualization the arable land needed goes back to what it was after the spike quite quickly as shown on the left graph. The graph on the right zooms in to give a better picture of how the efficiency was actually changing, although this graph does exclude the outliers, it shows that Qatar’s farming efficiency actually fluctuates quite a bt. However the changes from year to year have decreased, shown by the fact that the graph is flattening out.</p>
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>a1 &lt;- arable_land %&gt;%
+  filter(Entity == &quot;Qatar&quot;) %&gt;%
+  mutate(ratio = `Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))` / lag(`Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))`)) %&gt;%
+  ggplot(aes(x = Year, y = ratio)) +
+  geom_point() +
+  geom_hline(yintercept = 1, color = &quot;purple&quot;) +
+  labs(x = &quot;Year&quot;, y = &quot;Ratio of Arable Land Needed&quot;)
+
+a2 &lt;- arable_land %&gt;%
+  filter(Entity == &quot;Qatar&quot;) %&gt;%
+  mutate(ratio = `Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))` / lag(`Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))`)) %&gt;%
+  ggplot(aes(x = Year, y = ratio)) +
+  geom_point() +
+  geom_hline(yintercept = 1, color = &quot;purple&quot;) +
+  labs(x = &quot;Year&quot;, y = &quot;Ratio of Arable Land Needed&quot;) +
+  ylim(0,2)
+
+a1 + a2 +
+  plot_annotation(&quot;Ratio of Arable Land Needed in Qatar compared to Previous Year&quot;)</code></pre>
+<pre><code>## Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
+<pre><code>## Warning: Removed 3 rows containing missing values (geom_point).</code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-8-2.png" width="672" />
+One interesting thing to note is that the spike, while dramatic, is very contained. As shown in the first visualization the arable land needed goes back to what it was after the spike quite quickly as shown on the left graph. The graph on the right zooms in to give a better picture of how the efficiency was actually changing, although this graph does exclude the outliers, it shows that Qatar’s farming efficiency actually fluctuates quite a bit. However the changes from year to year have decreased, shown by the fact that the graph is flattening out. This trend is further illustrated by the second pairs of graphs which detail the ratio of arable land needed to produce a fized amount of crop compared to the previous year. In a similar style, the graph on the left shows whole picture and the graph of the right is zoomed in, which excludes some of the data but gives a better picture of the more normal data. As shown in the right graph while the ratio was very variable near the time of the spike, it flattens out in recent years, nearing the line y = 1 (shown in purple).</p>
 <p>Qatar is not apart of the gapminder data set, however external research has shown that the spike follows the year after a coup took place to overthrow the royal family only a few years after Qatar gained their independence from Great Britain. Additionally using the gapminder website it shows no significant changes for life expectancy or income during the time period of the spike, concluding that the result was most likely due to a power change and lack of organization.</p>
 </div>
 <div id="question-3" class="section level1">
@@ -247,13 +284,13 @@ combination &lt;- population_data %&gt;%
   geom_point() +
   labs(y = &quot;Life Expectancy&quot;, title = &quot;Life Expecancy by Arable Land Needed to Produce a Fixed Amount of Crop (2007)&quot;)</code></pre>
 <pre><code>## Warning: Removed 19 rows containing missing values (geom_point).</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" width="672" />
-The above visualization shows that for the most part there is not a strong relationship between the amount of arable land needed to produce a fixed amount of crop and the life expectancy of that country. One thing to note about this visualization is that it is for 2007. In the modern era these two measures may not be as indicative about the other as they might have once been because rich countries are able to import food from other countries. To see if this is the case I will use additional visualization to look at how the amount of arable land neeeded to produce a fixed quantity of crop also relates to the GDP per capita.I am using GDP per capita becuase it is often used as a measure of overall living standards for the citizens in the country.</p>
+<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+The above visualization shows that for the most part there is not a strong relationship between the amount of arable land needed to produce a fixed amount of crop and the life expectancy of that country. One thing to note about this visualization is that it is for 2007. In the modern era these two measures may not be as indicative about the other as they might have once been because rich countries are able to import food from other countries. To see if this is the case I will use additional visualization to look at how the amount of arable land needed to produce a fixed quantity of crop also relates to the GDP per capita.I am using GDP per capita because it is often used as a measure of overall living standards for the citizens in the country.</p>
 <pre class="r"><code>ggplot(combination, aes(x = `Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))`, y = gdpPercap)) +
   geom_point() +
   labs(y = &quot;GDP per Capita&quot;, title = &quot;GDP per Capita by Arable Land Needed to Produce a Fixed Amount of Crop (2007)&quot;)</code></pre>
 <pre><code>## Warning: Removed 19 rows containing missing values (geom_point).</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <pre class="r"><code>ggplot(combination, aes(x = `Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))`, y = gdpPercap, color = continent)) +
   geom_point() +
   geom_smooth(method = &quot;lm&quot;) +
@@ -261,8 +298,8 @@ The above visualization shows that for the most part there is not a strong relat
 <pre><code>## Warning: Removed 19 rows containing non-finite values (stat_smooth).</code></pre>
 <pre><code>## Warning in qt((1 - level)/2, df): NaNs produced</code></pre>
 <pre><code>## Warning: Removed 19 rows containing missing values (geom_point).</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-9-2.png" width="672" />
-The two graphs presented are almost identical except for the fact that the last graph includes trend lines and is colored based on continent. The first graph is included to get an overall sense of how the two variables are related. In it, it is possible to tell that there is a slight direct relation between higher amounts of arable land needed and GDP per capita. On the second graph these trends are more pronounced and grouped by continent. Here it is clear to see that that for some continents (Asia, Europe, and Oceania) there is a strong direct relationship between these variables. On the contrary the Americas and Africa have slightly negative trend lines. However the both continents have two large outliers for the amount of arable land needed to produce a fixed amount of crop. If we removed these two data points the resulting graph would show all continents have a direct trend between the amount of arable land needed to produce a fixed amount of crop and GDP per capita.</p>
+<p><img src="index_files/figure-html/unnamed-chunk-10-2.png" width="672" />
+The two graphs presented are almost identical except for the fact that the last graph includes trend lines and is colored based on continent. The first graph is included to get an overall sense of how the two variables are related worldwide. In it, it is possible to tell that there is a slight direct relation between higher amounts of arable land needed and GDP per capita. On the second graph these trends are more pronounced and grouped by continent. Here it is clear to see that that for some continents (Asia, Europe, and Oceania) there is a strong direct relationship between these variables. On the contrary the Americas and Africa have slightly negative trend lines. However the both continents have two large outliers for the amount of arable land needed to produce a fixed amount of crop. If we removed these two data points the resulting graph (shown below) would show all continents have a direct trend between the amount of arable land needed to produce a fixed amount of crop and GDP per capita.</p>
 <pre class="r"><code>combo &lt;-  combination %&gt;%
   arrange(desc(`Arable land needed to produce a fixed quantity of crops ((1.0 = 1961))`))
 
@@ -278,10 +315,10 @@ ggplot(combination_without_outliers4, aes(x = `Arable land needed to produce a f
 <pre><code>## Warning: Removed 19 rows containing non-finite values (stat_smooth).</code></pre>
 <pre><code>## Warning in qt((1 - level)/2, df): NaNs produced</code></pre>
 <pre><code>## Warning: Removed 19 rows containing missing values (geom_point).</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <div id="conclusion" class="section level2">
 <h2>Conclusion</h2>
-<p>These data analyses and exploration have allowed additional insight to farming efficiency amongst countries. From a big picture it was clear to see that since 1961 some countries have become way more efficient at farming. The British Virgin Islands need less than 2 percent of the oringal amount of arable land in order to get the same crop output. This goes to show how new farming techniques and modern science have contributed to drastically increase farming efficiency. In a further study of this topic, I would like to study how the introduction of Genetically Modified Organism’s (GMO’s) impacted crop output and farming efficiency.</p>
+<p>These data analyses and exploration have allowed additional insight to farming efficiency among countries. From a big picture it was clear to see that since 1961 some countries have become way more efficient at farming. The British Virgin Islands need less than 2 percent of the original amount of arable land in order to get the same crop output. This goes to show how new farming techniques and modern science have contributed to drastically increase farming efficiency. In a further study of this topic, I would like to study how the introduction of Genetically Modified Organism’s (GMO’s) impacted crop output and farming efficiency.</p>
 <p>The other big result from these data analyses is the conclusion that the farming efficiency is correlated with the economic welfare of a country. In my analysis I specifically looked at the relationship between arable land needed to produce a fixed amount of crop and GDP per capita. While some continents had a stronger correlation than others, all of the correlations are positive. As the world has become more globalized, rich countries have been able to import food and therefore do not need as high farming efficiency. To further this portion of the analysis I would like to compare the farming index to the 4 indicators of the Human Development Index to investigate further how farming efficiency (or inefficiency) is correlated to the divide between more developed and less developed countries.</p>
 </div>
 </div>
