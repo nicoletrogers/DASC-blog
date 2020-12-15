@@ -40,6 +40,7 @@ While exploring these data sets I noticed that there is a split between the tota
 library(tidyverse)
 library(ggplot2)
 library(tidytuesdayR)
+library(patchwork)
 
 
 tuition_cost %>%
@@ -74,55 +75,68 @@ Because the salary potential data has less observations, I will use salary poten
 As examined in the exploratory data analysis section, the cost of colleges depends greatly on whether or not the student is in-state or out of state and whether or not the student attends a public or private college. Because these options do significantly impact the cost of tuition they subsequently have a large impact on determining whether the investment is worth it.
 
 ```{r, message = FALSE}
- salary_potential %>%
+ p1 <- salary_potential %>%
   rename(state = state_name) %>%
   left_join(tuition_cost, by = c("name", "state")) %>%
   filter(!is.na(type)) %>%
   ggplot(aes(x = in_state_total, y = early_career_pay)) +
     geom_point() +
-    ggtitle("Instate Tuition Cost versus Early Salary Potential") +
+    ggtitle("Early Salary Potential") +
     labs(x = "Tuition Cost (in Dollars)", y = "Salary (in Dollars)") +
+    stat_smooth() +
     xlim(0, 80000) +
-    ylim(0, 160000) +
+    ylim(0, 160000) + 
+    theme(axis.text.x = element_text(angle = 90)) +
     facet_wrap(~type)
 
-salary_potential %>%
+p2 <- salary_potential %>%
   rename(state = state_name) %>%
   left_join(tuition_cost, by = c("name", "state")) %>%
   filter(!is.na(type)) %>%
   ggplot(aes(x = in_state_total, y = mid_career_pay)) +
     geom_point() +
-    ggtitle("Instate Tuition versus Mid Career Pay") +
+    ggtitle("Mid Career Pay") +
     labs(x = "Tuition (in Dollars)", y = "Salary (in Dollars)") +
+    stat_smooth() +
     xlim(0, 80000) +
     ylim(0, 160000) +
+    theme(axis.text.x = element_text(angle = 90)) +
     facet_wrap(~type)
 
 
-salary_potential %>%
+p3 <- salary_potential %>%
   rename(state = state_name) %>%
   left_join(tuition_cost, by = c("name", "state")) %>%
   filter(!is.na(type)) %>%
   ggplot(aes(x = out_of_state_total, y = early_career_pay)) +
     geom_point() +
-    ggtitle("Out of State Tuition versus Early Career Pay") +
+    ggtitle("Early Career Pay") +
     labs(x = "Tuition (in Dollars)", y = "Salary (in Dollars)") +
+    stat_smooth() +
     xlim(0, 80000) +
     ylim(0, 160000) +
+    theme(axis.text.x = element_text(angle = 90)) +
     facet_wrap(~type)
 
 
-salary_potential %>%
+p4 <- salary_potential %>%
   rename(state = state_name) %>%
   left_join(tuition_cost, by = c("name", "state")) %>%
   filter(!is.na(type)) %>%
   ggplot(aes(x = out_of_state_total, y = mid_career_pay)) +
     geom_point() +
-    ggtitle("Out of State Tuition versus Mid Career Pay") +
+    ggtitle("Mid Career Pay") +
     labs(x = "Tuition (in Dollars)", y = "Salary (in Dollars)") +
+    stat_smooth() +
     xlim(0, 80000) + 
     ylim(0, 160000) +
+    theme(axis.text.x = element_text(angle = 90)) +
     facet_wrap(~type)
+
+p1 + p2 +
+  plot_annotation(title = "In State Tuition versus Career Pay")
+p3 + p4 +
+  plot_annotation(title = "Out of State Tuition versus Career Pay")
 ```
 
 In conclusion, these visualizations show that expensive tuition may be worth the investment when looking at the results of salary potential. Consistently when the relationship between salary and tuition was evaluated the more expensive tuition lead to a higher salary. This result held true when broken down by in state or out of state, mid career or early career salary, and public versus private school.
@@ -145,14 +159,16 @@ tuition_cost %>%
   filter(type == "Private" | type == "Public") %>%
   ggplot(aes(x = type, y = in_state_total)) +
   geom_boxplot() +
-  labs(x = "School Type", y = "Tuition", title = "Total Cost per School Type for In State Students")
+  labs(x = "School Type", y = "Tuition", title = "Total Cost per School Type for In State Students") +
+  geom_point(position = "jitter", alpha = 0.2)
 
 
 tuition_cost %>%
   filter(type == "Private" | type == "Public") %>%
   ggplot(aes(x = type, y = out_of_state_total)) +
   geom_boxplot() +
-  labs(x = "School Type", y = "Tuition", title = "Total Cost per School Type for Out of State Students")
+  labs(x = "School Type", y = "Tuition", title = "Total Cost per School Type for Out of State Students") +
+  geom_point(position = "jitter", alpha = 0.2)
 ```
 
 This analysis concludes that overall private colleges are more expensive than public colleges. This is supported by the group level statistics. At every facet, the private school statistics were more expensive than their public school counterparts. However an interesting trend occurs when looking at the box plots. The overlap shows that while the overall trend of private schools being more expensive holds true, there are cases in which certain public schools are more expensive than other private schools. For out of state schools, there are upper outliers in the public school distribution. One constraint in this analysis is the possibility of scholarships. The data is for the full cost of attendance and does not include any scholarships. Scholarships are awarded on an individual basis and therefore there could truly be more instances where private schools are less expensive than public schools when after scholarships are awarded.
@@ -169,7 +185,7 @@ I will be using an inner join on the salary_potential and tuition_cost data fram
   inner_join(tuition_cost, by = c("name", "state")) %>%
   ggplot(aes(x = stem_percent, y = in_state_total)) +
   geom_point() +
-  geom_smooth(model = "lm") +
+  geom_smooth(method = "lm") +
   labs(x = "Percentage of STEM degrees", y = "Tuition", title = "In State Tuition versus STEM Percent") +
   facet_wrap(~type)
 
@@ -178,7 +194,7 @@ salary_potential %>%
   inner_join(tuition_cost, by = c("name", "state")) %>%
   ggplot(aes(x = stem_percent, y = out_of_state_total)) +
   geom_point() +
-  geom_smooth(model = "lm") +
+  geom_smooth(method = "lm") +
   labs(x = "Percentage of STEM degrees", y = "Tuition", title = "Out of State Tuition versus STEM Percent") +
   facet_wrap(~type)
 ```
