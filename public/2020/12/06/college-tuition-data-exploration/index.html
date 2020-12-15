@@ -95,13 +95,7 @@
 <h2>Exploratory Data Analysis</h2>
 <p>To explore the data I looked at all the data sets and narrowed down the two that I will be using to answer my questions. The two data sets are tuition_cost and salary_potential. First looking at the tuition_cost data. This data set has 2,973 observations with 10 variables. The name variable gives the name of the college or university. The state that the college is located in is found either by name in the state variable or by the two letter abbreviation in the state_code variable. The type variable describes the type of college as either Public, Private, or For Profit. For profit refers to schools that sell education for profit. Because most of the trends I am concerned just relate to public versus private I will filter out these schools. The degree_length variable classifies each as either a 2 or 4 year degree. The room_and_board variable gives the cost in dollars for room and board. Then the in_state_tuition and out_of_state_tuition gives the price in dollars for tuition. The in_state_total and out_of_state_total variables give the total cost of tuition by adding the respective tuition to the room and board variable. The next data set that I will be using is the salary_potential.csv data. This data has 935 observations and 7 variables. The name variable gives the name of the school. The state_name variable gives the name of the state that the college is in and the rank variable gives the ranking for each school within their state. The early_career_pay variable gives the median salary (in dollars) for alumni with 0-5 years of experience. The mid_career_pay variable gives the median salary (in dollars) for alumni with 10 or more years of experience. The make_world_better_percent variable tells the percentage of alumni that say that their work makes the world a better place. Finally the stem_percent variable gives the percentage of degrees awarded in STEM fields.</p>
 <p>While exploring these data sets I noticed that there is a split between the total cost and tuition rates in the tuition_cost data. The total cost gives the tuition plus the expenses for room and board. Another key fact about the data set is the fact that it gives different values for in state or out of state students. Consistently the cost for out of state students is higher than the cost for in state students. This trend can be shown in the figure below.</p>
-<pre class="r"><code>library(tidyverse)
-library(ggplot2)
-library(tidytuesdayR)
-library(patchwork)
-
-
-tuition_cost %&gt;%
+<pre class="r"><code>tuition_cost %&gt;%
   filter(type == &quot;Private&quot; | type == &quot;Public&quot;) %&gt;%
 ggplot(aes(x = in_state_total, y = out_of_state_total)) +
   geom_point() +

@@ -15,6 +15,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ##load data I will be using
 library(here)
 library(readr)
+library(tidyverse)
+library(ggplot2)
+library(tidytuesdayR)
+library(patchwork)
+
 salary_potential <- read_csv("./2020-03-10/salary_potential.csv")
 tuition_cost <- read_csv("./2020-03-10/tuition_cost.csv")
 ```
@@ -37,12 +42,6 @@ To explore the data I looked at all the data sets and narrowed down the two that
 
 While exploring these data sets I noticed that there is a split between the total cost and tuition rates in the tuition_cost data. The total cost gives the tuition plus the expenses for room and board. Another key fact about the data set is the fact that it gives different values for in state or out of state students. Consistently the cost for out of state students is higher than the cost for in state students. This trend can be shown in the figure below. 
 ```{r, message = FALSE}
-library(tidyverse)
-library(ggplot2)
-library(tidytuesdayR)
-library(patchwork)
-
-
 tuition_cost %>%
   filter(type == "Private" | type == "Public") %>%
 ggplot(aes(x = in_state_total, y = out_of_state_total)) +
